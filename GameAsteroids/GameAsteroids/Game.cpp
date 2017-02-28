@@ -79,19 +79,129 @@ void Game::loadContent()
 
 void Game::run()
 {
+	sf::Clock clock;
+	sf::Time timeSinceLastUpdate = sf::Time::Zero;
+	sf::Time timePerFrame = sf::seconds(1.f / 60.f);
+	while (m_Window.isOpen())
+	{
+		processEvents();
+		timeSinceLastUpdate += clock.restart();
+		while (timeSinceLastUpdate > timePerFrame)
+		{
+			timeSinceLastUpdate -= timePerFrame;
+			
+			processEvents();
+			update(timePerFrame);
+#ifdef TEST_FPS
 
+			secondTime += timePerFrame;
+			updateFrameCount++;
+			if (secondTime.asSeconds() > 1)
+			{
+				char bufferDps[256];
+				char bufferUps[256];
+				sprintf_s(bufferUps, "%d UPS", updateFrameCount - 1);
+				updateFps.setString(bufferUps);
+				sprintf_s(bufferDps, "%d DPS", updateFrameCount - 1);
+				updateFps.setString(bufferDps);
+				updateFrameCount = 0;
+				drawFrameCount = 0;
+				secondTime = sf::Time::Zero;
+
+			}
+#endif // TEST_FPS
+		}
+		render();
+#ifdef TEST_FPS
+		drawFrameCount++;
+#endif //TEST_FPS
+	}
 }
 
 void Game::processEvents()
 {
+	sf::Event event;
+	while (m_Window.pollEvent(event))
+	{
+		if (event.type == sf::Event::Closed)
+		{
+			m_Window.close();
+		}
+		switch (currentState)
+		{
+		case GameState::Licence:
+			break;
+		case GameState::Splash:
+			m_splashScreen.processInput(event);
+			break;
+		case GameState::MainMenu:
+			break;
+		case GameState::Help:
+			m_helpMenu.processInput(event);
+			break;
+		case GameState::Game:
+			m_mainGame.processInput(event);
+			break;
+		default:
+			break;
+		}
+	}
 }
 
-void Game::update(sf::Time)
+void Game::update(sf::Time time)
 {
+	switch (currentState)
+	{
+	case GameState::Licence:
+		m_licenceScreen.update(time);
+		break;
+	case GameState::Splash:
+		m_splashScreen.update(time);
+		break;
+	case GameState::MainMenu:
+		m_mainMenu.update(time, m_Window);
+		break;
+	case GameState::Help:
+		m_helpMenu.update(time);
+		break;
+	case GameState::Game:
+		m_mainGame.update(time);
+		break;
+	default:
+		break;
 }
 
 void Game::render()
 {
+	m_Window.clear();
+	switch (currentState)
+	{
+	case GameState::Licence:
+		m_licenceScreen.render(m_Window);
+		break;
+	case GameState::Splash:
+		m_splashScreen.render(m_Window);
+		break;
+	case GameState::MainMenu:
+		m_mainMenu.render(m_Window);
+		break;
+	case GameState::Help:
+		m_helpMenu.render(m_Window);
+		break;
+	case GameState::Game:
+		m_mainGame.render(m_Window);
+		break;
+	default:
+		break;
+
+		}
+#ifdef TEST_FPS
+	
+	m_Window.draw(updateFps);
+	m_Window.draw(drawFps);
+#endif // TEST_FPS
+	m_Window.display();
 }
+
 
 
