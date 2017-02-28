@@ -5,10 +5,6 @@
 #define TEST_FPS
 #endif // _DEBUG
 
-#include "targetver.h"
-#include <stdio.h>
-#include <tchar.h>
-
 #include "Licence.h"
 #include "SplashScreen.h"
 #include "MainMenu.h"
@@ -53,11 +49,11 @@ protected:
 	int drawFrameCount;
 
 #endif // TEST_FPS
-	Licence m_licenceScreen;
+	/*Licence m_licenceScreen;*/
 	SplashScreen m_splashScreen;
 	MainMenu m_mainMenu;
-	GamePlay m_mainGame;
-	HelpMenu m_helpMenu;
+	/*GamePlay m_mainGame;*/
+	/*HelpMenu m_helpMenu;*/
 
 #endif // !GAME_H
 

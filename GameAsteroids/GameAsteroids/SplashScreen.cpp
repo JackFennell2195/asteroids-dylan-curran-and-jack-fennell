@@ -14,15 +14,6 @@ SplashScreen::~SplashScreen()
 void SplashScreen::initialise(sf::Font& font)
 {
 	m_font = font;
-
-	if (!m_splashTexture.loadFromFile("ASSETS/IMAGES?wallpaper.jpg"))
-	{
-		std::cout << "error with Splash File";
-	}
-	m_splashTexture.setRepeated(true);
-	m_splashSprite.setTexture(m_splashTexture);
-	m_splashSprite.setTextureRect(sf::IntRect(0, 0 static_cast<int>(Game::screenWidth), static_cast<int>(Game::screenHeight)));
-	m_splashSprite.setPosition(0, 0);
 	m_message.setFont(m_font);
 	m_message.setString("Press the space bar to continue");
 	m_message.setCharacterSize(20); 

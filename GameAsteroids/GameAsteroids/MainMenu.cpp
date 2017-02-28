@@ -68,7 +68,7 @@ void MainMenu::update(sf::Time time, sf::Window & window)
 			{
 				Game::currentState = GameState::Help;
 			}
-			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 2 && mouseLocation.y < m_topOffset + m_verticalSpacing * 2 + m_buttonHeight)
+			/*if (mouseLocation.y > m_topOffset + m_verticalSpacing * 2 && mouseLocation.y < m_topOffset + m_verticalSpacing * 2 + m_buttonHeight)
 			{
 				Game::currentState = GameState::Shop;
 			}
@@ -79,7 +79,7 @@ void MainMenu::update(sf::Time time, sf::Window & window)
 			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 4 && mouseLocation.y < m_topOffset + m_verticalSpacing * 4 + m_buttonHeight)
 			{
 				Game::currentState = GameState::Credits;
-			}
+			}*/
 			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 5 && mouseLocation.y < m_topOffset + m_verticalSpacing * 5 + m_buttonHeight)
 			{
 				window.close();
