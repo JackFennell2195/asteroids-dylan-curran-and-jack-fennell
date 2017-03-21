@@ -1,4 +1,5 @@
-#pragma once
+#ifndef HELPMENU
+#define HELPMENU
 /// <summary>
 ///  Project authors: Dylan Curran and Jack Fennell
 /// Project Asteroids in a group: help menu
@@ -22,4 +23,5 @@ protected:
 	sf::Font h_font;
 	sf::Text h_message;
 	bool h_exit;
-};	// end helpMenu
+};	
+#endif // end helpMenu

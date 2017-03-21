@@ -1,4 +1,5 @@
-#pragma once
+#ifndef GAMEPLAY
+#define GAMEPLAY
 #include <iostream>
 #include <SFML\Graphics.hpp>
 
@@ -13,4 +14,5 @@ class Gameplay
 
 
 
-};	// end Gameplay
+};	
+#endif // end Gameplay

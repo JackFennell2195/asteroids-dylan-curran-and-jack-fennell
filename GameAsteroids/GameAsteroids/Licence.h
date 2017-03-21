@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LICENCE
+#define LICENCE
 #include <iostream>
 #include <SFML\Graphics.hpp>
 /// <summary>
@@ -20,4 +21,5 @@ protected:
 	sf::Text l_message;
 	sf::Time l_time;
 
-};	// end of licence
+};	
+#endif// end of licence
