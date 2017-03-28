@@ -5,6 +5,7 @@
 
 class Gameplay
 {
+public:
 	Gameplay();
 	~Gameplay();
 	void initialise();

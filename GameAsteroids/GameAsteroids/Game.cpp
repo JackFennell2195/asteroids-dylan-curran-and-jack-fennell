@@ -49,12 +49,12 @@ void Game::loadContent()
 		std::cout << "Error with font file";
 	}
 
-	/*m_licenceScreen.initialise(m_arialFont);*/
+	m_licenceScreen.initialise(m_arialFont);
 	m_splashScreen.initialise(m_arialFont);
 
 	m_mainMenu.initialise(m_arialFont);
-	/*m_mainGame.initialise();*/
-	//m_helpMenu.initialise(m_arialFont);
+	m_mainGame.initialise();
+	m_helpMenu.initialise(m_arialFont);
 
 	m_gold = 0;
 #ifdef STARTRICH

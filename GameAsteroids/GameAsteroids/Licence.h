@@ -10,6 +10,7 @@
 
 class Licence
 {
+public:
 	Licence();
 	~Licence();
 	void initialise(sf::Font&);

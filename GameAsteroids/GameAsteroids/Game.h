@@ -49,12 +49,13 @@ protected:
 	int drawFrameCount;
 
 #endif // TEST_FPS
-	/*Licence m_licenceScreen;*/
+	Licence m_licenceScreen;
 	SplashScreen m_splashScreen;
 	MainMenu m_mainMenu;
-	/*GamePlay m_mainGame;*/
-	/*HelpMenu m_helpMenu;*/
+	Gameplay m_mainGame;
+	HelpMenu m_helpMenu;
 
-#endif // !GAME_H
+
 
 };
+#endif // !GAME_H
