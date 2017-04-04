@@ -16,7 +16,7 @@ void Gameplay::render(sf::RenderWindow &)
 {
 }
 
-void Gameplay::takeInput(sf::Event event)
+void Gameplay::processInput(sf::Event event)
 {
 	if (event.type == sf::Event::KeyPressed)
 	{

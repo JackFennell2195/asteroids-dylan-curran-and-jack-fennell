@@ -136,12 +136,12 @@ void Game::processEvents()
 			break;
 		case GameState::MainMenu:
 			break;
-		/*case GameState::Help:
+		case GameState::Help:
 			m_helpMenu.processInput(event);
-			break;*/
-		/*case GameState::Game:
+			break;
+		case GameState::Game:
 			m_mainGame.processInput(event);
-			break;*/
+			break;
 		default:
 			break;
 		}
@@ -152,21 +152,21 @@ void Game::update(sf::Time time)
 {
 	switch (currentState)
 	{
-	/*case GameState::Licence:
+	case GameState::Licence:
 		m_licenceScreen.update(time);
-		break;*/
+		break;
 	case GameState::Splash:
 		m_splashScreen.update(time);
 		break;
 	case GameState::MainMenu:
 		m_mainMenu.update(time, m_Window);
 		break;
-	/*case GameState::Help:
+	case GameState::Help:
 		m_helpMenu.update(time);
-		break;*/
-	//case GameState::Game:
-	//	m_mainGame.update(time);
-	//	break;
+		break;
+	case GameState::Game:
+		m_mainGame.update(time);
+		break;
 	default:
 		break;
 	}
@@ -177,21 +177,21 @@ void Game::render()
 	m_Window.clear();
 	switch (currentState)
 	{
-	/*case GameState::Licence:
+	case GameState::Licence:
 		m_licenceScreen.render(m_Window);
-		break;*/
+		break;
 	case GameState::Splash:
 		m_splashScreen.render(m_Window);
 		break;
 	case GameState::MainMenu:
 		m_mainMenu.render(m_Window);
 		break;
-	/*case GameState::Help:
+	case GameState::Help:
 		m_helpMenu.render(m_Window);
-		break;*/
-	/*case GameState::Game:
+		break;
+	case GameState::Game:
 		m_mainGame.render(m_Window);
-		break;*/
+		break;
 	default:
 		break;
 

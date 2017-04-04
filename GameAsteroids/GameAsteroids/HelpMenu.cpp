@@ -34,7 +34,7 @@ void HelpMenu::render(sf::RenderWindow &window)
 {
 }
 
-void HelpMenu::takeInput(sf::Event event)
+void HelpMenu::processInput(sf::Event event)
 {
 	if (event.type == sf::Event::KeyPressed)
 	{

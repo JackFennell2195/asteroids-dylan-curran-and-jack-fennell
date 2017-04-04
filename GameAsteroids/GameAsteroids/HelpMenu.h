@@ -16,7 +16,7 @@ public:
 	~HelpMenu();	// destructor
 	void initialise(sf::Font&);
 	void render(sf::RenderWindow&);
-	void takeInput(sf::Event);
+	void processInput(sf::Event);
 	void update(sf::Time);
 
 protected:
