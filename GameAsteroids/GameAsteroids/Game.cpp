@@ -31,8 +31,8 @@ int main()
 	game.run();
 }
 
-float Game::screenWidth = 600;
-float Game::screenHeight = 400;
+float Game::screenWidth = 750;
+float Game::screenHeight = 650;
 GameState Game::currentState = GameState::Licence;
 
 Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), static_cast<int>(Game::screenHeight)), "SFML Game", sf::Style::Default)
@@ -61,19 +61,7 @@ void Game::loadContent()
 	m_gold = 1000;
 #endif // STARTRICH
 
-#ifdef TEST_FPS
-	updateFrameCount = 0;
-	drawFrameCount = 0;
-	secondTime = sf::Time::Zero;
-	updateFps.setFont(m_arialFont);
-	updateFps.setPosition(20, 300);
-	updateFps.setCharacterSize(24);
-	updateFps.setColor(sf::Color::White);
-	drawFps.setFont(m_arialFont);
-	drawFps.setPosition(20, 350);
-	drawFps.setCharacterSize(24);
-	drawFps.setColor(sf::Color::White);
-#endif // TEST_FPS 
+
 
 }
 
@@ -92,29 +80,14 @@ void Game::run()
 			
 			processEvents();
 			update(timePerFrame);
-#ifdef TEST_FPS
+
 
 			secondTime += timePerFrame;
-			updateFrameCount++;
-			if (secondTime.asSeconds() > 1)
-			{
-				char bufferDps[256];
-				char bufferUps[256];
-				sprintf_s(bufferUps, "%d UPS", updateFrameCount - 1);
-				updateFps.setString(bufferUps);
-				sprintf_s(bufferDps, "%d DPS", updateFrameCount - 1);
-				updateFps.setString(bufferDps);
-				updateFrameCount = 0;
-				drawFrameCount = 0;
-				secondTime = sf::Time::Zero;
+			
 
-			}
-#endif // TEST_FPS
 		}
 		render();
-#ifdef TEST_FPS
-		drawFrameCount++;
-#endif //TEST_FPS
+
 	}
 }
 
@@ -196,11 +169,8 @@ void Game::render()
 		break;
 
 		}
-#ifdef TEST_FPS
+
 	
-	m_Window.draw(updateFps);
-	m_Window.draw(drawFps);
-#endif // TEST_FPS
 	m_Window.display();
 }
 

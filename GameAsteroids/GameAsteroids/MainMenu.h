@@ -21,7 +21,7 @@ public:
 
 protected:
 
-	static const int m_optionCount = 5;
+	static const int m_optionCount = 6;
 	sf::Texture m_buttonTexture;
 	sf::Sprite m_buttonSprites[m_optionCount];
 	sf::Font m_font;

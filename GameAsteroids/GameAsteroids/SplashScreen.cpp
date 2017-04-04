@@ -16,7 +16,7 @@ void SplashScreen::initialise(sf::Font& font)
 	m_font = font;
 	m_message.setFont(m_font);
 	m_message.setString("Press the space bar to continue");
-	m_message.setCharacterSize(20); 
+	m_message.setCharacterSize(40); 
 	m_message.setStyle(sf::Text::Bold);
 	m_message.setColor(sf::Color::White);
 
