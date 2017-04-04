@@ -21,10 +21,10 @@ void MainMenu::initialise(sf::Font& font)
 	sf::String m_menuTexts[] = { "PLay Game", "Help", "Shop", "Tutorial", "Credits", "Quit" };
 
 	m_font = font;
-	/*if (!m_buttonTexture.loadFromFile("ASSETS/IMAGES/button.png"))
+	if (!m_buttonTexture.loadFromFile("ASSETS/IMAGES/button.png"))
 	{
 		std::cout << "error with button file";
-	}*/
+	}
 	for (int i = 0; i < m_optionCount; i++)
 	{
 		m_buttonSprites[i].setTexture(m_buttonTexture);
