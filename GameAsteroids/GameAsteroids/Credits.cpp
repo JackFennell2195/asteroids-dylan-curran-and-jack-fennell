@@ -29,6 +29,7 @@ void Credits::initialise(sf::Font &font)
 		sf::FloatRect textSize = c_message[i].getGlobalBounds();
 		float textOffset = (c_textWidth - textSize.width) / 2;
 		c_message[i].setPosition(c_leftOffset + textOffset, c_verticalSpacing*i + c_topOffset + textDropOffset);
+
 	}
 	
 	c_time = sf::seconds(0);

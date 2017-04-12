@@ -56,6 +56,7 @@ private:
 	MainMenu m_mainMenu;
 	Gameplay m_mainGame;
 	HelpMenu m_helpMenu;
+	Credits m_credits;
 
 
 
