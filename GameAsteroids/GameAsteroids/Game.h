@@ -32,7 +32,7 @@ public:
 	static float screenHeight;
 	static GameState currentState;
 
-protected:
+private:
 	void processEvents();
 	void update(sf::Time);
 	void render();

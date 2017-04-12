@@ -17,7 +17,7 @@ public:
 	void render(sf::RenderWindow&);
 	void update(sf::Time);
 
-protected:
+private:
 	sf::Font l_font;
 	sf::Text l_message;
 	sf::Time l_time;

@@ -19,7 +19,7 @@ public:
 	void render(sf::RenderWindow&);
 	void update(sf::Time, sf::Window&);
 
-protected:
+private:
 
 	static const int m_optionCount = 6;
 	sf::Texture m_buttonTexture;

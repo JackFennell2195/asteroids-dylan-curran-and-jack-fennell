@@ -19,7 +19,7 @@ public:
 	void processInput(sf::Event);
 	void update(sf::Time);
 
-protected:
+private:
 	sf::Font h_font;
 	sf::Text h_message;
 	bool h_exit;

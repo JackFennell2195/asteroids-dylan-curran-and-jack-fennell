@@ -75,11 +75,11 @@ void MainMenu::update(sf::Time time, sf::Window & window)
 			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 3 && mouseLocation.y < m_topOffset + m_verticalSpacing * 3 + m_buttonHeight)
 			{
 				Game::currentState = GameState::Tutorial;
-			}
-			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 4 && mouseLocation.y < m_topOffset + m_verticalSpacing * 4 + m_buttonHeight)
-			{
-				Game::currentState = GameState::Credits;
 			}*/
+			//if (mouseLocation.y > m_topOffset + m_verticalSpacing * 4 && mouseLocation.y < m_topOffset + m_verticalSpacing * 4 + m_buttonHeight)
+			//{
+			//	Game::currentState = GameState::Credits;
+			//}
 			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 5 && mouseLocation.y < m_topOffset + m_verticalSpacing * 5 + m_buttonHeight)
 			{
 				window.close();
