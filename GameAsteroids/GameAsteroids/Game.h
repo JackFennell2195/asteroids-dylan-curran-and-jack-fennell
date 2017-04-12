@@ -10,6 +10,7 @@
 #include "MainMenu.h"
 #include "GamePlay.h"
 #include "HelpMenu.h"
+#include "Credits.h"
 
 enum class
 	GameState
@@ -19,6 +20,7 @@ enum class
 	Splash,
 	MainMenu,
 	Help,
+	Credits,
 	Game
 };
 

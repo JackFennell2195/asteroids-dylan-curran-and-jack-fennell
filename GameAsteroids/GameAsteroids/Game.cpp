@@ -24,6 +24,7 @@
 #include "Game.h"
 #include "Licence.h"
 #include "SplashScreen.h"
+#include "Credits.h"
 
 int main()
 {
