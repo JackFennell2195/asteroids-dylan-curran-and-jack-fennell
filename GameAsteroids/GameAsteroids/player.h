@@ -8,7 +8,7 @@ class Player
 	sf::CircleShape body;
 	
 	
-	int lives = 0;
+	int lives = 3;
 	double playerSpeed = 0.001;
 	double playerAcceleration = 0;
 	double playerX = 375;
@@ -30,6 +30,7 @@ public:
 	void shoots();
 	void collision();
 	void move();
+	
 };
 
 #endif //PLAYER

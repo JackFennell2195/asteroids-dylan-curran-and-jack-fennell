@@ -71,6 +71,26 @@ double Player::acceleration()
 	return playerAcceleration;
 }
 
+void Player::shoots()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+	{
+		//bullet stuff
+	}
+}
+
+void Player::collision()
+{
+	/*if (playerX <= asteroidX + 50)
+	{ lives--;}
+	if (playerX + 100 >= asteroidX)
+	{ lives--;}
+	if (playerY <= asteroidY + 50)
+	{ lives--;}
+	if (playerY + 100 >= asteroidY)
+	{ lives--;}*/
+}
+
 void Player::move()
 {
 	
@@ -78,8 +98,8 @@ void Player::move()
 	{
 		
 		accelerate = acceleration();
-		//playerX += accelerate * cos(currentAngle);
-		//playerY += accelerate * sin(currentAngle);		// causes the arc fix soon
+		playerX += accelerate * cos(currentAngle);		//
+		playerY += accelerate * sin(currentAngle);		// causes the arc fix soon
 		std::cout << currentAngle << std::endl;
 		setPosition();
 	}
