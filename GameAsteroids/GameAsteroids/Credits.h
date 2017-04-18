@@ -15,7 +15,9 @@ public:
 	~Credits();
 	void initialise(sf::Font&);
 	void render(sf::RenderWindow&);
+	void processInput(sf::Event);
 	void update(sf::Time);
+
 
 private:
 	sf::Font c_font;
@@ -24,7 +26,10 @@ private:
 	sf::Text c_message3;
 	sf::Text c_message4;
 	sf::Text c_message5;
+	sf::Text c_message6;
+	sf::Text c_message7;
 	sf::Time c_time;
+	bool m_proceedKeyPressed;
 
 };
 #endif// end of credits

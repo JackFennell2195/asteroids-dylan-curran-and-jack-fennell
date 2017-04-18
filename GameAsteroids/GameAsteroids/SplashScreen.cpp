@@ -55,10 +55,7 @@ void SplashScreen::processInput(sf::Event event)
 
 void SplashScreen::update(sf::Time time)
 {
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left))
-	{
-		m_proceedKeyPressed = true;
-	}
+	
 	if (m_proceedKeyPressed)
 	{
 		Game::currentState = GameState::MainMenu;

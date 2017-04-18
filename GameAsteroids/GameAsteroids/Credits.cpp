@@ -42,7 +42,7 @@ void Credits::initialise(sf::Font &font)
 
 	sf::FloatRect textSize2 = c_message3.getGlobalBounds();
 	float xPos2 = Game::screenWidth / 2 - textSize2.width / 2;
-	c_message2.setPosition(xPos2, 150.0f);
+	c_message3.setPosition(xPos2, 150.0f);
 
 	//message4
 	c_message4.setFont(c_font);
@@ -52,7 +52,7 @@ void Credits::initialise(sf::Font &font)
 
 	sf::FloatRect textSize3 = c_message4.getGlobalBounds();
 	float xPos3 = Game::screenWidth / 2 - textSize3.width / 2;
-	c_message2.setPosition(xPos3, 150.0f);
+	c_message4.setPosition(xPos3, 150.0f);
 
 	//message5
 	c_message5.setFont(c_font);
@@ -63,39 +63,86 @@ void Credits::initialise(sf::Font &font)
 	sf::FloatRect textSize4 = c_message5.getGlobalBounds();
 	float xPos4 = Game::screenWidth / 2 - textSize4.width / 2;
 	c_message5.setPosition(xPos4, 150.0f);
+
+
+	c_message6.setFont(c_font);
+	c_message6.setString("Artists");
+	c_message6.setColor(sf::Color::White);
+	c_message6.setCharacterSize(70);
+
+	sf::FloatRect textSize5 = c_message6.getGlobalBounds();
+	float xPos5 = Game::screenWidth / 2 - textSize5.width / 2;
+	c_message6.setPosition(xPos5, 150.0f);
 	
+
+	c_message7.setFont(c_font);
+	c_message7.setString("(Press Esc to return to the Main Menu)");
+	c_message7.setColor(sf::Color::White);
+	c_message7.setCharacterSize(30);
+
+	sf::FloatRect textSize6 = c_message7.getGlobalBounds();
+	float xPos6 = Game::screenWidth / 2 - textSize6.width / 2;
+	c_message7.setPosition(xPos6, 450.0f);
+
 	
 	c_time = sf::seconds(0);
 }
 
 void Credits::render(sf::RenderWindow & window)
 {
-	if (c_time.asSeconds() < 3.0)
+	window.draw(c_message7);
+
+	if (c_time.asSeconds() < 4.0)
 	{
 		window.draw(c_message1);
 		window.draw(c_message2);
 	}
-	else if (c_time.asSeconds() > 3.1 && c_time.asSeconds() < 6.0)
+	else if (c_time.asSeconds() > 4.1 && c_time.asSeconds() < 7.0)
 	{
 		window.draw(c_message3);
 		window.draw(c_message2);
 	}
-	else if (c_time.asSeconds() > 6.1 && c_time.asSeconds() < 9.0)
+	else if (c_time.asSeconds() > 7.1 && c_time.asSeconds() < 10.0)
 	{
 		window.draw(c_message4);
 		window.draw(c_message2);
 	}
-	else if (c_time.asSeconds() > 9.1 && c_time.asSeconds() < 12.0)
+	else if (c_time.asSeconds() > 10.1 && c_time.asSeconds() < 13.0)
 	{
 		window.draw(c_message5);
 		window.draw(c_message2);
 	}
-
+	else if (c_time.asSeconds() > 13.1 && c_time.asSeconds() < 16.0)
+	{
+		window.draw(c_message6);
+		window.draw(c_message2);
+	}
+	else if (c_time.asSeconds() > 16.1)
+	{
+		Game::currentState = GameState::MainMenu;
+		c_time = sf::seconds(0);
+	}
 
 }
 
+void Credits::processInput(sf::Event event)
+{
+	if (event.type == sf::Event::KeyPressed)
+	{
+		if (event.key.code == sf::Keyboard::Escape)
+		{
+			m_proceedKeyPressed = true;
+		}
+	}
+}
 void Credits::update(sf::Time time)
 {
 	c_time += time;
+
+	if (m_proceedKeyPressed)
+	{
+		Game::currentState = GameState::MainMenu;
+	}
+	m_proceedKeyPressed = false;
 	
 }

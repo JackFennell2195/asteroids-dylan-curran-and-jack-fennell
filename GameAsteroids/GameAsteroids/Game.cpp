@@ -112,6 +112,7 @@ void Game::processEvents()
 		case GameState::MainMenu:
 			break;
 		case GameState::Credits:
+			m_credits.processInput(event);
 			break;
 		case GameState::Help:
 			m_helpMenu.processInput(event);
