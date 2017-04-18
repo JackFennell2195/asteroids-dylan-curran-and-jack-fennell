@@ -15,18 +15,21 @@ public:
 	~Credits();
 	void initialise(sf::Font&);
 	void render(sf::RenderWindow&);
+	void processInput(sf::Event);
 	void update(sf::Time);
 
-private:
-	static const int c_options = 6;
-	sf::Font c_font;
-	sf::Text c_message[c_options];
-	sf::Time c_time;
 
-	float c_topOffset;
-	float c_leftOffset;
-	float c_verticalSpacing;
-	float c_textWidth;
-	float c_textHeight;
+private:
+	sf::Font c_font;
+	sf::Text c_message1;
+	sf::Text c_message2;
+	sf::Text c_message3;
+	sf::Text c_message4;
+	sf::Text c_message5;
+	sf::Text c_message6;
+	sf::Text c_message7;
+	sf::Time c_time;
+	bool m_proceedKeyPressed;
+
 };
 #endif// end of credits
