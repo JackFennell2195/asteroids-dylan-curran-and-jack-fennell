@@ -20,7 +20,10 @@ public:
 private:
 	sf::Font l_font;
 	sf::Text l_message;
+	sf::Text l_message1;
+	sf::Text l_message2;
 	sf::Time l_time;
 
-};	
+};
 #endif// end of licence
+

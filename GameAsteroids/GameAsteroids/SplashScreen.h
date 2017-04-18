@@ -21,7 +21,7 @@ public:
 	void update(sf::Time);
 
 protected:
-	
+
 	sf::Texture m_splashTexture;
 	sf::Sprite m_splashSprite;
 	sf::Font m_font;

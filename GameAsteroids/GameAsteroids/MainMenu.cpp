@@ -12,15 +12,24 @@ MainMenu::~MainMenu()
 
 void MainMenu::initialise(sf::Font& font)
 {
+	m_font = font;
+	if (!m_backgroundTexture.loadFromFile("ASSETS/IMAGES/menu.png"))
+	{
+		std::cout << "error with button file";
+	}
+	m_backgroundSprite.setTexture(m_backgroundTexture);
+	m_backgroundSprite.setPosition(0, 25);
+	sf::Vector2u textureSize = m_backgroundTexture.getSize();
+
 	m_topOffset = 50;
-	m_verticalSpacing = 100;
+	m_verticalSpacing = 128;
 	m_buttonWidth = 200;
 	m_leftOffset = (Game::screenWidth - m_buttonWidth) / 2;
 	m_buttonHeight = 50;
 	int textDropOffset = 10;
-	sf::String m_menuTexts[] = { "Play Game", "Help", "Shop", "Tutorial", "Credits", "Quit" };
+	sf::String m_menuTexts[] = { "Play Game", "Help", "Shop", "Credits", "Quit" };
 
-	m_font = font;
+
 	if (!m_buttonTexture.loadFromFile("ASSETS/IMAGES/button.png"))
 	{
 		std::cout << "error with button file";
@@ -45,6 +54,8 @@ void MainMenu::initialise(sf::Font& font)
 
 void MainMenu::render(sf::RenderWindow& window)
 {
+	window.draw(m_backgroundSprite);
+
 	for (int i = 0; i < m_optionCount; i++)
 	{
 		window.draw(m_buttonSprites[i]);
@@ -68,19 +79,16 @@ void MainMenu::update(sf::Time time, sf::Window & window)
 			{
 				Game::currentState = GameState::Help;
 			}
-			/*if (mouseLocation.y > m_topOffset + m_verticalSpacing * 2 && mouseLocation.y < m_topOffset + m_verticalSpacing * 2 + m_buttonHeight)
+			/*if (mouseLocation.y > m_topOffset + m_verticalSpacing * 2 && mouseLocatin.y < m_topOffset + m_verticalSpacing * 2 + m_buttonHeight)
 			{
-				Game::currentState = GameState::Shop;
+			Game::currentState = GameState::Shop;
 			}
+			*/
 			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 3 && mouseLocation.y < m_topOffset + m_verticalSpacing * 3 + m_buttonHeight)
-			{
-				Game::currentState = GameState::Tutorial;
-			}*/
-			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 4 && mouseLocation.y < m_topOffset + m_verticalSpacing * 4 + m_buttonHeight)
 			{
 				Game::currentState = GameState::Credits;
 			}
-			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 5 && mouseLocation.y < m_topOffset + m_verticalSpacing * 5 + m_buttonHeight)
+			if (mouseLocation.y > m_topOffset + m_verticalSpacing * 4 && mouseLocation.y < m_topOffset + m_verticalSpacing * 4 + m_buttonHeight)
 			{
 				window.close();
 			}
