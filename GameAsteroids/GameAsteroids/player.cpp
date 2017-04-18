@@ -11,9 +11,12 @@ void Player::initialise()
 {
 	
 	const int circleSize = 20;
+	body.setOrigin(20,20);
+	p_sprite.setOrigin(50,50);
 	body.setRadius(circleSize);
-	body.setRotation(90);
-	p_sprite.setRotation(90);
+	body.setRotation(rotator);
+	p_sprite.setRotation(rotator);
+	
 	body.setFillColor(sf::Color::Red);
 	if (!p_texture.loadFromFile("ASSETS/IMAGES/basicShip.png"))
 	{
@@ -36,17 +39,17 @@ void Player::rotate()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
-		body.rotate(-rotator);
-		p_sprite.rotate(-rotator);
-		
-		currentAngle -= rotator;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
 		body.rotate(rotator);
 		p_sprite.rotate(rotator);
 		
 		currentAngle += rotator;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	{
+		body.rotate(-rotator);
+		p_sprite.rotate(-rotator);
+		
+		currentAngle -= rotator;
 	}
 	std::cout << currentAngle << std::endl;
 }
@@ -64,7 +67,7 @@ double Player::acceleration()
 			playerAcceleration -= playerSpeed;
 		}
 	}
-	std::cout << playerAcceleration << std::endl;
+	
 	return playerAcceleration;
 }
 
@@ -73,18 +76,18 @@ void Player::move()
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		std::cout << 1 << std::endl;
+		
 		accelerate = acceleration();
 		playerX += accelerate * cos(currentAngle);
 		playerY += accelerate * sin(currentAngle);
-		
+		std::cout << currentAngle << std::endl;
 		setPosition();
 	}
 	else
 	{
 		if (!accelerate <= 0)
 		{
-			std::cout << 2 << std::endl;
+			
 			accelerate = acceleration();
 			playerX += accelerate * cos(currentAngle);
 			playerY += accelerate * sin(currentAngle);

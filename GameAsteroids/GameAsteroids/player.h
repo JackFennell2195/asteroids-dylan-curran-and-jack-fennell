@@ -11,11 +11,11 @@ class Player
 	int lives = 0;
 	double playerSpeed = 0.001;
 	double playerAcceleration = 0;
-	double playerX = 300;
-	double playerY = 300;
+	double playerX = 375;
+	double playerY = 325;
 	int fuel = 0;
 	int shields = 0;
-	double rotator = 0.05;
+	double rotator = 0.005;
 	double currentAngle = 0;
 	double accelerate = 0;
 	sf::Sprite p_sprite;
