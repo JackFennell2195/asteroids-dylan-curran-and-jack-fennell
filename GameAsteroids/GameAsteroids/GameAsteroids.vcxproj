@@ -128,6 +128,7 @@
     <ClCompile Include="HelpMenu.cpp" />
     <ClCompile Include="Licence.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,7 @@
     <ClInclude Include="HelpMenu.h" />
     <ClInclude Include="Licence.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="SplashScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

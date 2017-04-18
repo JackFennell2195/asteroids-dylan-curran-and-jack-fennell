@@ -2,9 +2,11 @@
 #define GAMEPLAY
 #include <iostream>
 #include <SFML\Graphics.hpp>
+#include "player.h"
 
 class Gameplay
 {
+	
 public:
 	Gameplay();
 	~Gameplay();

@@ -38,6 +38,7 @@ GameState Game::currentState = GameState::Licence;
 
 Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), static_cast<int>(Game::screenHeight)), "SFML Game", sf::Style::Default)
 {
+	player.initialise();
 	loadContent();
 	m_Window.setKeyRepeatEnabled(false);
 }
@@ -149,6 +150,7 @@ void Game::update(sf::Time time)
 void Game::render()
 {
 	m_Window.clear();
+	
 	switch (currentState)
 	{
 	case GameState::Licence:
@@ -165,10 +167,11 @@ void Game::render()
 		break;
 	case GameState::Game:
 		m_mainGame.render(m_Window);
+		player.render(m_Window);
 		break;
 	default:
 		break;
-
+		
 		}
 
 	

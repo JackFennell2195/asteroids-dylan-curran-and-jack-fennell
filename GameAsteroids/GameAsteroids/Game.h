@@ -11,6 +11,7 @@
 #include "GamePlay.h"
 #include "HelpMenu.h"
 #include "Credits.h"
+#include "player.h"
 
 enum class
 	GameState
@@ -26,6 +27,7 @@ enum class
 
 class Game
 {
+	Player player;
 public:
 	Game();
 	void run();

@@ -14,6 +14,7 @@ void Gameplay::initialise()
 
 void Gameplay::render(sf::RenderWindow &)
 {
+	
 }
 
 void Gameplay::processInput(sf::Event event)
