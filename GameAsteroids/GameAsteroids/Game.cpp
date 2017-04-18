@@ -58,7 +58,7 @@ void Game::loadContent()
 	m_mainMenu.initialise(m_arialFont);
 	m_mainGame.initialise();
 	m_helpMenu.initialise(m_arialFont);
-
+	m_credits.initialise(m_arialFont);
 	m_gold = 0;
 #ifdef STARTRICH
 	m_gold = 1000;
@@ -123,6 +123,9 @@ void Game::processEvents()
 			break;
 		case GameState::MainMenu:
 			break;
+		case GameState::Credits:
+			m_credits.processInput(event);
+			break;
 		case GameState::Help:
 			m_helpMenu.processInput(event);
 			break;
@@ -151,6 +154,9 @@ void Game::update(sf::Time time)
 	case GameState::Help:
 		m_helpMenu.update(time);
 		break;
+	case GameState::Credits:
+		m_credits.update(time);
+		break;
 	case GameState::Game:
 		m_mainGame.update(time);
 		break;
@@ -176,6 +182,9 @@ void Game::render()
 		break;
 	case GameState::Help:
 		m_helpMenu.render(m_Window);
+		break;
+	case GameState::Credits:
+		m_credits.render(m_Window);
 		break;
 	case GameState::Game:
 		m_mainGame.render(m_Window);

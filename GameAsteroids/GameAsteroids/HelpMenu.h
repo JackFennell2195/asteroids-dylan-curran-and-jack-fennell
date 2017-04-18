@@ -22,6 +22,11 @@ public:
 private:
 	sf::Font h_font;
 	sf::Text h_message;
+	sf::Text h_message1;
+	sf::Text h_message2;
+	sf::Text h_message3;
+	sf::Text h_message4;
+	sf::Text h_message5;
 	bool h_exit;
 };	
 #endif // end helpMenu
