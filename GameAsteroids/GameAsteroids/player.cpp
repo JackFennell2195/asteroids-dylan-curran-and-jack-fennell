@@ -78,8 +78,8 @@ void Player::move()
 	{
 		
 		accelerate = acceleration();
-		playerX += accelerate * cos(currentAngle);
-		playerY += accelerate * sin(currentAngle);
+		//playerX += accelerate * cos(currentAngle);
+		//playerY += accelerate * sin(currentAngle);		// causes the arc fix soon
 		std::cout << currentAngle << std::endl;
 		setPosition();
 	}
