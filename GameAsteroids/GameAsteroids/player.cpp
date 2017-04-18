@@ -1,11 +1,16 @@
 #include "player.h"
 
+void Player::setPosition()
+{
+	body.setPosition(sf::Vector2f(playerX,playerY));
+}
+
 void Player::initialise()
 {
 	const int circleSize = 50;
 	body.setRadius(circleSize);
 	body.setFillColor(sf::Color::Red);
-	body.setPosition(sf::Vector2f(50, 50));
+	
 }
 
 void Player::render(sf::RenderWindow & window)

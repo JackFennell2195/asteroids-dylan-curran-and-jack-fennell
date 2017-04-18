@@ -17,6 +17,7 @@ class Player
 	sf::Sprite sprite;
 
 public:
+	void setPosition();
 	void initialise();
 	void render(sf::RenderWindow &window);
 	void rotate();

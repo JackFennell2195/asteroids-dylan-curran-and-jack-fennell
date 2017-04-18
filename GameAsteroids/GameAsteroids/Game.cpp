@@ -95,6 +95,18 @@ void Game::run()
 
 void Game::processEvents()
 {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		std::cout << "hi" << std::endl;
+		player.move();
+		player.setPosition();
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		std::cout << "hi" << std::endl;
+		player.rotate();
+		player.setPosition();
+	}
 	sf::Event event;
 	while (m_Window.pollEvent(event))
 	{
