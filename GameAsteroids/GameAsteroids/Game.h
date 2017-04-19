@@ -12,6 +12,7 @@
 #include "HelpMenu.h"
 #include "Credits.h"
 #include "player.h"
+#include "Asteroid.h"
 
 enum class
 	GameState
@@ -27,7 +28,9 @@ enum class
 
 class Game
 {
+	static const int MAX_ENEMIES = 10;
 	Player player;
+	Asteroid asteroid[MAX_ENEMIES];
 public:
 	Game();
 	void run();
