@@ -128,6 +128,8 @@
     <ClCompile Include="HelpMenu.cpp" />
     <ClCompile Include="Licence.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MyMatrix3.cpp" />
+    <ClCompile Include="MyVector3D.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
   </ItemGroup>
@@ -138,6 +140,8 @@
     <ClInclude Include="HelpMenu.h" />
     <ClInclude Include="Licence.h" />
     <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MyMatrix3.h" />
+    <ClInclude Include="MyVector3D.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="SplashScreen.h" />
   </ItemGroup>

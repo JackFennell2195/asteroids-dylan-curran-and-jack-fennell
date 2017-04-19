@@ -2,6 +2,8 @@
 #define PLAYER
 #include <iostream>
 #include <SFML\Graphics.hpp>
+#include "MyMatrix3.h"
+#include "MyVector3D.h"
 class Player
 {
 	const int MAX_SPEED = 100;

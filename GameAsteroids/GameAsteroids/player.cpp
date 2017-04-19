@@ -41,7 +41,7 @@ void Player::rotate()
 	{
 		body.rotate(rotator);
 		p_sprite.rotate(rotator);
-		
+		MyMatrix3 MatrixA{ 1,0,0,0,1,0,0,0,1 };
 		currentAngle += rotator;
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
