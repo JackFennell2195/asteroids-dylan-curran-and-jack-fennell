@@ -9,15 +9,14 @@ class Asteroid
 	int lives;
 	const double MAX_SPEED = 50.0;
 	double rotator;
-	double acceleration;
-	sf::Sprite asteroid_sprite;
-	sf::Texture asteroid_texture;
+	double asteroidAcceleration;
 	double asteroid_X;
 	double asteroid_Y;
+	sf::Sprite asteroid_sprite;
+	sf::Texture asteroid_texture;
 
 public:
 	Asteroid();
-	sf::CircleShape getBody();
 	void initialise();
 	void render(sf::RenderWindow &window);
 	void rotate();
