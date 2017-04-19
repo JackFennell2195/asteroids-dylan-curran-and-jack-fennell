@@ -2,28 +2,37 @@
 #define PLAYER
 #include <iostream>
 #include <SFML\Graphics.hpp>
+#include "MyMatrix3.h"
+#include "MyVector3D.h"
 class Player
 {
 	const int MAX_SPEED = 100;
 	sf::CircleShape body;
-	int lives = 0;
-	double playerSpeed = 0.05;
+	
+	
+	int lives = 3;
+	double playerSpeed = 0.001;
 	double playerAcceleration = 0;
-	double playerX = 0;
-	double playerY = 0;
+	double playerX = 375;
+	double playerY = 325;
 	int fuel = 0;
 	int shields = 0;
-	double rotator = 0.00056765;
-	sf::Sprite sprite;
+	double rotator = 0.005;
+	double currentAngle = 0;
+	double accelerate = 0;
+	sf::Sprite p_sprite;
+	sf::Texture p_texture;
 
 public:
+	void setPosition();
 	void initialise();
 	void render(sf::RenderWindow &window);
 	void rotate();
-	void acceleration();
+	double acceleration();
 	void shoots();
 	void collision();
 	void move();
+	
 };
 
 #endif //PLAYER

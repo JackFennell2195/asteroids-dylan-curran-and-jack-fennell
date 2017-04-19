@@ -39,6 +39,7 @@ GameState Game::currentState = GameState::Licence;
 Game::Game() : m_Window(sf::VideoMode(static_cast<int>(Game::screenWidth), static_cast<int>(Game::screenHeight)), "SFML Game", sf::Style::Default)
 {
 	player.initialise();
+	player.setPosition();
 	loadContent();
 	m_Window.setKeyRepeatEnabled(false);
 }
@@ -95,6 +96,17 @@ void Game::run()
 
 void Game::processEvents()
 {
+	
+		
+		player.move();
+		player.setPosition();
+	
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		
+		player.rotate();
+		player.setPosition();
+	}
 	sf::Event event;
 	while (m_Window.pollEvent(event))
 	{

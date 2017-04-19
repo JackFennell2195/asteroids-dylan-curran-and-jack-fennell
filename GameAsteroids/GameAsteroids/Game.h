@@ -38,6 +38,7 @@ public:
 	static float screenWidth;
 	static float screenHeight;
 	static GameState currentState;
+	bool playerAlive = true;
 
 private:
 	void processEvents();
