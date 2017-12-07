@@ -22,7 +22,7 @@ void HelpMenu::initialise(sf::Font &font)
 	h_message.setFont(h_font);
 	h_message.setString("Help Menu");
 	h_message.setCharacterSize(50);
-	h_message.setColor(sf::Color::Yellow);
+	h_message.setFillColor(sf::Color::Yellow);
 
 	sf::FloatRect textSize = h_message.getGlobalBounds();
 	float xPos = Game::screenWidth / 2 - textSize.width / 2;
@@ -31,7 +31,7 @@ void HelpMenu::initialise(sf::Font &font)
 	h_message3.setFont(h_font);
 	h_message3.setString("Use the up arrow key to move");
 	h_message3.setCharacterSize(30);
-	h_message3.setColor(sf::Color::Yellow);
+	h_message3.setFillColor(sf::Color::Yellow);
 
 	sf::FloatRect textSize3 = h_message3.getGlobalBounds();
 	float xPos3 = Game::screenWidth / 2 - textSize3.width / 2;
@@ -40,7 +40,7 @@ void HelpMenu::initialise(sf::Font &font)
 	h_message1.setFont(h_font);
 	h_message1.setString("Left or right button to rotate");
 	h_message1.setCharacterSize(30);
-	h_message1.setColor(sf::Color::Yellow);
+	h_message1.setFillColor(sf::Color::Yellow);
 
 	sf::FloatRect textSize1 = h_message1.getGlobalBounds();
 	float xPos1 = Game::screenWidth / 2 - textSize1.width / 2;
@@ -49,7 +49,7 @@ void HelpMenu::initialise(sf::Font &font)
 	h_message2.setFont(h_font);
 	h_message2.setString("use the spacebar to shoot");
 	h_message2.setCharacterSize(30);
-	h_message2.setColor(sf::Color::Yellow);
+	h_message2.setFillColor(sf::Color::Yellow);
 
 	sf::FloatRect textSize2 = h_message2.getGlobalBounds();
 	float xPos2 = Game::screenWidth / 2 - textSize2.width / 2;
@@ -58,7 +58,7 @@ void HelpMenu::initialise(sf::Font &font)
 	h_message4.setFont(h_font);
 	h_message4.setString("Destroy asteroids and pirate ships to earn materials");
 	h_message4.setCharacterSize(30);
-	h_message4.setColor(sf::Color::Yellow);
+	h_message4.setFillColor(sf::Color::Yellow);
 
 	sf::FloatRect textSize4 = h_message4.getGlobalBounds();
 	float xPos4 = Game::screenWidth / 2 - textSize4.width / 2;
@@ -67,7 +67,7 @@ void HelpMenu::initialise(sf::Font &font)
 	h_message5.setFont(h_font);
 	h_message5.setString("Use materials to upgrade your ship in the shop");
 	h_message5.setCharacterSize(30);
-	h_message5.setColor(sf::Color::Yellow);
+	h_message5.setFillColor(sf::Color::Yellow);
 
 	sf::FloatRect textSize5 = h_message5.getGlobalBounds();
 	float xPos5 = Game::screenWidth / 2 - textSize5.width / 2;

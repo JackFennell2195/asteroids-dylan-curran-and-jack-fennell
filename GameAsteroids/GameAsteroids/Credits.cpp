@@ -17,7 +17,7 @@ void Credits::initialise(sf::Font &font)
 	//message1
 	c_message1.setFont(c_font);
 	c_message1.setString("Programmers");
-	c_message1.setColor(sf::Color::White);
+	c_message1.setFillColor(sf::Color::White);
 	c_message1.setCharacterSize(70);
 
 	sf::FloatRect textSize = c_message1.getGlobalBounds();
@@ -27,7 +27,7 @@ void Credits::initialise(sf::Font &font)
 	//message2
 	c_message2.setFont(c_font);
 	c_message2.setString("Dylan Curran and Jack Fennell");
-	c_message2.setColor(sf::Color::White);
+	c_message2.setFillColor(sf::Color::White);
 	c_message2.setCharacterSize(70);
 
 	sf::FloatRect textSize1 = c_message2.getGlobalBounds();
@@ -37,7 +37,7 @@ void Credits::initialise(sf::Font &font)
 	//message3
 	c_message3.setFont(c_font);
 	c_message3.setString("Developers");
-	c_message3.setColor(sf::Color::White);
+	c_message3.setFillColor(sf::Color::White);
 	c_message3.setCharacterSize(70);
 
 	sf::FloatRect textSize2 = c_message3.getGlobalBounds();
@@ -47,7 +47,7 @@ void Credits::initialise(sf::Font &font)
 	//message4
 	c_message4.setFont(c_font);
 	c_message4.setString("Producers");
-	c_message4.setColor(sf::Color::White);
+	c_message4.setFillColor(sf::Color::White);
 	c_message4.setCharacterSize(70);
 
 	sf::FloatRect textSize3 = c_message4.getGlobalBounds();
@@ -57,7 +57,7 @@ void Credits::initialise(sf::Font &font)
 	//message5
 	c_message5.setFont(c_font);
 	c_message5.setString("Designers");
-	c_message5.setColor(sf::Color::White);
+	c_message5.setFillColor(sf::Color::White);
 	c_message5.setCharacterSize(70);
 
 	sf::FloatRect textSize4 = c_message5.getGlobalBounds();
@@ -67,7 +67,7 @@ void Credits::initialise(sf::Font &font)
 
 	c_message6.setFont(c_font);
 	c_message6.setString("Artists");
-	c_message6.setColor(sf::Color::White);
+	c_message6.setFillColor(sf::Color::White);
 	c_message6.setCharacterSize(70);
 
 	sf::FloatRect textSize5 = c_message6.getGlobalBounds();
@@ -77,7 +77,7 @@ void Credits::initialise(sf::Font &font)
 
 	c_message7.setFont(c_font);
 	c_message7.setString("(Press Esc to return to the Main Menu)");
-	c_message7.setColor(sf::Color::White);
+	c_message7.setFillColor(sf::Color::White);
 	c_message7.setCharacterSize(30);
 
 	sf::FloatRect textSize6 = c_message7.getGlobalBounds();
